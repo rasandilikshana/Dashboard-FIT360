@@ -44,4 +44,6 @@ RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache \
 COPY ./docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh && chown www-data:www-data /entrypoint.sh
 
+EXPOSE 8000
+
 ENTRYPOINT ["/entrypoint.sh"]
