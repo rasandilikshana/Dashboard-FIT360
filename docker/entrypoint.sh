@@ -6,6 +6,10 @@ echo "Fixing permissions..."
 chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 chmod -R 777 /var/www/storage /var/www/bootstrap/cache
 
+# Install dependencies
+echo "Installing Composer dependencies..."
+composer update --no-dev --no-interaction --prefer-dist
+
 # Wait for MySQL to be ready
 echo "Waiting for database..."
 until mysql -h db -u "$DB_USERNAME" -p"$DB_PASSWORD" -e "SELECT 1" >/dev/null 2>&1; do
