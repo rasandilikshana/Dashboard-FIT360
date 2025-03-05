@@ -12,6 +12,7 @@ services:
       - ./storage:/var/www/storage:rw
       - ./bootstrap/cache:/var/www/bootstrap/cache:rw
     environment:
+      - APP_ENV=production
       - DB_HOST=db
       - DB_DATABASE=${DB_DATABASE}
       - DB_USERNAME=${DB_USERNAME}
